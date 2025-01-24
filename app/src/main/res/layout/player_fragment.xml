@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+     >
+
+    <ImageView
+        android:id="@+id/player_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <ImageButton
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/arrowBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/arrow"
+        android:background="@null"
+        />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/imagesPager"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="95dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/seekbar"
+
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+            <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/seekbar"
+
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
+                android:id="@+id/song_name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/white"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:shadowColor="#000000"
+                android:shadowDx="1.3"
+                android:shadowDy="1.1"
+                android:shadowRadius="1.4"
+                android:padding="4dp"/>
+
+            <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/seekbar"
+                android:layout_marginBottom="25dp"
+                android:paddingBottom="3dp"
+                android:gravity="center"
+                android:id="@+id/song_author"
+                android:textStyle="bold"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:marqueeRepeatLimit="marquee_forever"
+               />
+
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_marginBottom="20dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        app:layout_constraintBottom_toTopOf="@id/butns"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:progress="0"
+        android:progressDrawable="@drawable/seekbar"
+        android:thumb="@drawable/thumb"
+        android:indeterminate="false"
+        />
+
+    <com.example.muzon.Timer
+        android:id="@+id/timer"
+        app:layout_constraintBottom_toTopOf="@id/butns"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:countDown="false"
+        android:fontFamily="@font/roboto_light"
+        android:textStyle="normal"
+        android:textColor="@color/white"
+        android:shadowColor="#000000"
+        android:shadowDx="1.3"
+        android:shadowDy="1.1"
+        android:shadowRadius="1.4"
+        android:padding="2dp"
+        android:textAllCaps="false"
+        />
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/roboto_light"
+        android:textSize="13sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/butns"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:shadowColor="#000000"
+        android:shadowDx="1.3"
+        android:shadowDy="1.1"
+        android:shadowRadius="1.4"
+        android:padding="2dp"
+        />
+
+        android:id="@+id/up_butns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/butns"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="70dp"
+        android:weightSum="3">
+
+        <ImageButton
+            android:id="@+id/queue"
+            app:srcCompat = "@drawable/playlist"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/butns"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginStart="10dp"
+            />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/heartContainer"
+            app:layout_constraintBottom_toTopOf="@id/butns"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="70dp"
+            >
+
+            <ImageView
+                android:id="@+id/heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/heart"
+                android:background="@null"
+                />
+
+            <ImageView
+                android:id="@+id/heart_fill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/heart_fill"
+                android:background="@null"
+                />
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/add"
+            app:srcCompat = "@drawable/add"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/butns"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginEnd="10dp"
+            />
+
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/butns">
+
+        <ImageButton
+            android:id="@+id/repeat"
+            app:srcCompat = "@drawable/repeat"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            />
+
+        <ImageButton
+            android:id="@+id/prev_but"
+            app:srcCompat = "@drawable/rewind_back"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:paddingTop="7dp"
+            />
+
+        <com.example.muzon.PlayPauseView
+            android:id="@+id/playPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/play_to_pause"
+            />
+
+
+        <ImageButton
+            android:id="@+id/next_but"
+            app:srcCompat = "@drawable/rewind_forward"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:paddingTop="7dp"
+            />
+
+        <ImageButton
+            android:id="@+id/mix"
+            app:srcCompat = "@drawable/mix"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            />
+
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        app:layout_constraintBottom_toTopOf="@id/butns"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heartAnim"
+        app:lottie_rawRes="@raw/animas"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
